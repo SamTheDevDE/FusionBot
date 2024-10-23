@@ -20,7 +20,8 @@
 	"dependencies": {
 		"colorette": "2.0.20",
 		"discord-api-types": "0.37.97",
-		"discord.js": "14.15.3"
+		"discord.js": "14.15.3",
+		"express": "^4.21.1"
 	},
 	"devDependencies": {
 		"prettier": "3.3.3",

@@ -18,7 +18,7 @@ export class Client<Ready extends boolean = true> extends DJSClient<Ready> {
 				status: 'dnd', // ! Set your bot's status (online, dnd, idle, invisible)
 				activities: [
 					{
-						name: 'Template Stars go brrrr', // ! Set your bot's activity
+						name: 'Paint Dry', // ! Set your bot's activity
 						type: ActivityType.Watching,
 					},
 				],
