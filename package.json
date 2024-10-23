@@ -1,10 +1,10 @@
 {
-	"name": "discordbot",
+	"name": "FusionBot",
 	"version": "1.6.0",
 	"main": "src/index.ts",
 	"author": {
-		"name": "EvolutionX-10",
-		"url": "https://github.com/EvolutionX-10"
+		"name": "SamTheDev",
+		"url": "https://github.com/SamTheDevDE"
 	},
 	"license": "MIT",
 	"type": "module",
@@ -15,7 +15,8 @@
 	},
 	"scripts": {
 		"dev": "bun run --watch .",
-		"start": "bun run ."
+		"start": "bun run .",
+		"dockerBuild": "docker build -t fusionbot ."
 	},
 	"dependencies": {
 		"colorette": "2.0.20",
