@@ -23,10 +23,12 @@ export async function startAPI() {
         logger.debug(`Loaded route: /${routeName}`);
     }
 
+    // Fix: Include both req and res parameters
+    api.get('/', (req, res) => {
+        res.send('API Version: V1.8.0');
+    });
+
     api.listen(port, () => {
         logger.info('API is running on port ' + port);
-    });
-    api.get('/', (res) => {
-        res.send('API Version: V1.8.0');
     });
 }

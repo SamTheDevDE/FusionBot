@@ -19,6 +19,7 @@
 		"dockerBuild": "docker build -t fusionbot ."
 	},
 	"dependencies": {
+		"@types/express": "^5.0.0",
 		"@types/mysql": "^2.15.26",
 		"colorette": "2.0.20",
 		"discord-api-types": "0.37.97",
