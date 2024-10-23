@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"baseUrl": ".",
+		"paths": {
+			"#lib/*": ["lib/*"],
+			"#core": ["core/index.ts"],
+			"#root/*": ["*"]
+		},
+		"rootDir": ".",
+		"allowJs": true,
+		"noEmit": true,
+		"strict": true,
+		"noUnusedLocals": false,
+		"skipLibCheck": true
+	}
+}
