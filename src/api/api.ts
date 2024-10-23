@@ -26,4 +26,7 @@ export async function startAPI() {
     api.listen(port, () => {
         logger.info('API is running on port ' + port);
     });
+    api.get('/', (req, res) => {
+        res.send('API Version: V1.8.0');
+    });
 }
