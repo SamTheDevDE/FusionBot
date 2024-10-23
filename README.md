@@ -40,7 +40,7 @@ This guide assumes you have solid understanding of JavaScript and at least basic
 
 ## Getting Started
 
-Click on [`Use this template`](https://github.com/EvolutionX-10/discordbot/generate) button and it will generate a new repository based on this repository in your account. Once done, you may clone your repository locally using git[^git]. <br />
+clone this repository using git[^git]. <br />
 You also need to have a Discord Bot application created. If you haven't done it yet, you can do it by following the guide [here](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot).
 
 ## Dev Setup
