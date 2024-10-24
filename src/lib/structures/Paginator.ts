@@ -71,18 +71,19 @@ export class Paginator {
 		user?: User
 	) {
 		this.sanityChecks();
+	
+		// No need to call buildEmbeds if we have embeds passed in options
+		const embeds = this.options.embeds ?? this.buildEmbeds()!;
+	
+		const rows = Boolean(this.buildSelect())
+			? [this.buildButtons(), this.buildSelect()!]
+			: [this.buildButtons()];
 
 		const target = user
 			? user
 			: messageOrInteraction instanceof Message
 			? messageOrInteraction.author
 			: messageOrInteraction.user;
-
-		const embeds = this.options.embeds ?? this.buildEmbeds()!;
-
-		const rows = Boolean(this.buildSelect())
-			? [this.buildButtons(), this.buildSelect()!]
-			: [this.buildButtons()];
 
 		if (messageOrInteraction instanceof Message) {
 			const message = await this.handleMessage(

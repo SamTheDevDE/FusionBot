@@ -11,13 +11,12 @@ export default new Listener({
 		) {
 			const command = client.commands.get(interaction.commandName);
 			if (command && command.commandRun) {
-				if (command.ownerOnly && !client.ownerIds.includes(interaction.user.id))
-					return;
+				if (command.ownerOnly && !client.ownerIds.includes(interaction.user.id)) return;
 				try {
-					await command
-						.commandRun(interaction);
+					await command.commandRun(interaction);
 				} catch (error) {
-					client.logger.error((error as Error).name);
+					// Improved error logging
+					client.logger.error(`Error in command ${interaction.commandName}: ${(error as Error).message}\nStack Trace: ${(error as Error).stack}`);
 				}
 			}
 		}
@@ -26,16 +25,15 @@ export default new Listener({
 			const command = client.commands.get(interaction.commandName);
 
 			if (command && command.autoCompleteRun && command.commandRun) {
-				if (command.ownerOnly && !client.ownerIds.includes(interaction.user.id))
-					return;
+				if (command.ownerOnly && !client.ownerIds.includes(interaction.user.id)) return;
 
 				if (command.name !== interaction.commandName) return;
 
 				try {
-					await command
-						.autoCompleteRun(interaction)
+					await command.autoCompleteRun(interaction);
 				} catch (error) {
-					client.logger.error((error as Error).name);
+					// Improved error logging
+					client.logger.error(`Error in autocomplete command ${interaction.commandName}: ${(error as Error).message}\nStack Trace: ${(error as Error).stack}`);
 				}
 			}
 		}
