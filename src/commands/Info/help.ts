@@ -1,6 +1,6 @@
 import { CommandType } from '#lib/enums';
-import { Command, Paginator } from '#lib/structures';
-import { EmbedBuilder } from 'discord.js';
+import { Command, Paginator, query } from '#lib/structures';
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } from 'discord.js';
 import path from 'path';
 import fs from 'fs';
 
@@ -23,6 +23,7 @@ export default new Command({
     description: 'Sends the help menu',
 
     async commandRun(interaction) {
+        const newsMessage = await query('SELECT message FROM news_message WHERE id = 1');
         // Bot info embed
         const descriptionInfo = '# Fusion Bot: Your All-in-One Discord Companion!\n\n' +
         'Fusion Bot is a powerful Discord bot designed to enhance your server experience with advanced features:\n' +
@@ -42,7 +43,7 @@ export default new Command({
                 { name: 'Commands:', value: `${interaction.client.commands.size}`, inline: true },
                 { name: 'Guilds:', value: `${interaction.client.guilds.cache.size}`, inline: true },
                 { name: 'WS-Ping:', value: `${interaction.client.ws.ping}ms`, inline: true },
-                { name: 'Description:', value: 'FusionBot is a versatile Discord bot that helps manage your server.', inline: false }
+                { name: 'Bot News:', value: newsMessage[0].message, inline: false }
             )
             .setFooter({ text: 'Use the commands wisely!' })
             .setTimestamp();
@@ -118,6 +119,13 @@ export default new Command({
     },
 
     async messageRun(message) {
-        return message.channel.send('Pong!');
+        const padletButton = new ButtonBuilder()
+            .setLabel("to Fusion's Padlet")
+            .setStyle(ButtonStyle.Link)
+            .setURL("https://padlet.com/SamTheDevReal/fusionbot")
+        const row = new ActionRowBuilder()
+            .addComponents(padletButton);
+
+        return message.channel.send({ content: 'Help only works as /command right now check the padlet out to see when it is getting added!\ndo you mean this? => </help:1298680825054892073>', components: [row] });
     },
 });
