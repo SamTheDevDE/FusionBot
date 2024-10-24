@@ -8,6 +8,7 @@ export default new Command({
 	type: CommandType.ChatInput,
 	description: 'Enjoy Pagination',
 	aliases: ['p'],
+	ownerOnly: true,
 	async messageRun(message) {
 		const embeds = strings.map((x) =>
 			new EmbedBuilder().setDescription(x).setColor('Random')
