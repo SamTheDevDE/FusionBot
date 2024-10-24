@@ -72,7 +72,7 @@ export default new Command({
         });
 
         // Prepare fields for categorized commands
-        const fields: { name: string; value: string }[] = [];
+        const fields: { name: string; value: string; inline: boolean }[] = [];
         const categoryNames = Object.keys(categorizedCommands);
         for (const folder of categoryNames) {
             fields.push({ name: `**${folder}**`, value: categorizedCommands[folder].map(c => `${c.name}: ${c.description}`).join('\n'), inline: false });
