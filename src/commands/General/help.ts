@@ -35,7 +35,7 @@ export default new Command({
 
         const botInfoEmbed = new EmbedBuilder()
             .setTitle('📜 FusionBot Info')
-            .setColor('#0099ff')
+            .setColor('#1f2226')
             .setDescription(descriptionInfo)
             .setImage('https://i.ibb.co/HTGy6Zk/FUSION-BOT-2-1.png')
             .addFields(
@@ -101,7 +101,7 @@ export default new Command({
                 ...fields.map(field => {
                     return new EmbedBuilder()
                         .setTitle('📜 Command Categories')
-                        .setColor('#0099ff')
+                        .setColor('#1f2226')
                         .setImage('https://i.ibb.co/HTGy6Zk/FUSION-BOT-2-1.png')
                         .addFields(field)
                         .setFooter({ text: 'Use the commands wisely!' })
