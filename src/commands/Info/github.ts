@@ -4,20 +4,25 @@ import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } from 'disc
 
 const infoEmbed = new EmbedBuilder()
     .setAuthor({ name: 'Fusion' })
-    .setTitle("Add Fusion now!")
-    .setDescription("Fusion Bot is a powerful Discord bot designed to enhance your server experience with advanced features! add it now to get all these features!")
+    .setTitle("Fusion's Github!")
+    .setDescription("YES Fusion has a github where you can self host the bot its based on EvolutionX-10's adv handler im adding functions and commands to it aswell as adding an api and (maybe) a dashboard+website but thats when the database is FULLY integrated! also if you like the github repo Star it it helps me a lot and gives me motivation to keep on and not scrap that project! thx byee!")
     .setFooter({ text: "Made by SamTheDev"})
     .setTimestamp()
     .setColor('#1f2226')
     .setImage("https://i.ibb.co/HTGy6Zk/FUSION-BOT-2-1.png")
 
-const inviteButton = new ButtonBuilder()
-    .setLabel("Add Fusion")
+const fusionGithub = new ButtonBuilder()
+    .setLabel("To Fusion's GitHub Repo")
     .setStyle(ButtonStyle.Link)
-    .setURL("https://discord.com/oauth2/authorize?client_id=1296547118445756456")
+    .setURL("https://github.com/SamTheDevDE/FusionBot/")
+
+const evolutionXGithub = new ButtonBuilder()
+    .setLabel("To EvolutionX's AdvHandler GitHub Repo")
+    .setStyle(ButtonStyle.Link)
+    .setURL("https://github.com/EvolutionX-10/discordbot")
 
 const row = new ActionRowBuilder()
-    .addComponents(inviteButton)
+    .addComponents(fusionGithub, evolutionXGithub)
 
 export default new Command({
     type: CommandType.ChatInput,
