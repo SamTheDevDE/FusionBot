@@ -108,7 +108,7 @@ export default new Command({
                         .setTimestamp();
                 }),
             ],
-            ephemeral: true,
+            ephemeral: false,
             time: 60_000,
             includeSelectMenu: true,
             wrongInteractionResponse: 'Invalid selection. Please try again.',
@@ -121,11 +121,3 @@ export default new Command({
         return message.channel.send('Pong!');
     },
 });
-/*
-categoryNames.map(category => ({
-            label: category,
-            value: category,
-            description: `View commands in ${category}`,
-        }))
-
-*/
