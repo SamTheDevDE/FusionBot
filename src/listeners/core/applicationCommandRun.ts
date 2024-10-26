@@ -12,6 +12,11 @@ export default new Listener({
 			const command = client.commands.get(interaction.commandName);
 			if (command && command.commandRun) {
 				if (command.ownerOnly && !client.ownerIds.includes(interaction.user.id)) return;
+				if (command.isLoggingCommand == true) try {
+					
+				} catch (error) {
+
+				}
 				try {
 					await command.commandRun(interaction);
 				} catch (error) {

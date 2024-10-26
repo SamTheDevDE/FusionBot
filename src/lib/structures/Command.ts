@@ -24,6 +24,7 @@ export class Command<T extends CommandType = CommandType> {
 	public runInDM?: boolean;
 	public aliases?: string[];
 	public ownerOnly?: boolean;
+	public isLoggingCommand?: boolean;
 	public commandRun?: (interaction: RunType[T]) => Awaitable<unknown>;
 	public messageRun?: (
 		message: Message<boolean>,
@@ -45,6 +46,8 @@ export class Command<T extends CommandType = CommandType> {
 		this.permissions = data.defaultMemberPermissions ?? null;
 		this.runInDM = data.dmPermission;
 		this.ownerOnly = data.ownerOnly;
+		this.isLoggingCommand = data.isLoggingCommand;
+
 
 		if (data.type === CommandType.ChatInput) {
 			this.description = (data as ChatInputCommandOptions).description;
@@ -88,6 +91,7 @@ interface BaseCommandOptions<T extends CommandType> {
 	description?: string;
 	defaultMemberPermissions?: PermissionResolvable;
 	ownerOnly?: boolean;
+	isLoggingCommand?: boolean;
 	commandRun?: (interaction: RunType[T]) => Awaitable<unknown>;
 	messageRun?: (message: Message<boolean>, args: string[]) => Awaitable<unknown>;
 	autoCompleteRun?: T extends CommandType.ChatInput
