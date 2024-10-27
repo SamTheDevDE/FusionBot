@@ -17,7 +17,6 @@ export default new Listener({
 				client.logger.error(`Error deleting guild: ${guild.name} (ID: ${guild.id}) - ${err}`);
 			}
 		}
-
 		await delGuild();
 	},
 });
