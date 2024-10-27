@@ -34,6 +34,30 @@ export default new Command({
         await interaction.reply({ embeds: [infoEmbed] });
     },
     async messageRun(message) {
+
+        const infoEmbed = new EmbedBuilder()
+            .setAuthor({ name: 'Fusion', iconURL: 'https://i.ibb.co/HTGy6Zk/FUSION-BOT-2-1.png' })
+            .setTitle("Fusion Info's")
+            .setDescription("Fusion Bot is a powerful Discord bot designed to enhance your server experience with advanced features")
+            .setColor('#1f2226')
+            .setFooter({ text: "Made by SamTheDev"})
+            .setTimestamp();
+        // Gather the necessary data
+        const clientPing = message.client.ws.ping; // Client WebSocket ping
+        const dbPing = await getDatabasePing(); // Function to get database ping, implement as needed
+        const ramUsage = process.memoryUsage(); // RAM usage in bytes
+        const totalMemory = os.totalmem(); // Total RAM
+        const usedMemory = ramUsage.heapUsed / 1024 / 1024; // Convert to MB
+        const totalMemoryMB = totalMemory / 1024 / 1024; // Convert to MB
+
+        // Add fields to the embed
+        infoEmbed.addFields(
+            { name: 'Client Ping', value: `${clientPing} ms`, inline: false },
+            { name: 'Database Ping', value: `${dbPing} ms`, inline: false },
+            { name: 'WebSocket Ping', value: `${clientPing} ms`, inline: false },
+            { name: 'RAM Usage', value: `${Math.round(usedMemory)} MB / ${Math.round(totalMemoryMB)} MB`, inline: false },
+        );
+
         await message.channel.send({ embeds: [infoEmbed] });
     },
 });
