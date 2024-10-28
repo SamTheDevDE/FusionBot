@@ -19,16 +19,30 @@
 		"dockerBuild": "docker build -t fusionbot ."
 	},
 	"dependencies": {
+		"@discord-player/extractor": "^4.5.1",
+		"@discordjs/opus": "^0.9.0",
+		"@discordjs/voice": "^0.17.0",
 		"@types/express": "^5.0.0",
 		"@types/mysql": "^2.15.26",
 		"colorette": "2.0.20",
+		"date-fns": "^4.1.0",
 		"discord-api-types": "0.37.97",
+		"discord-player": "^6.7.1",
+		"discord-player-youtubei": "^1.3.3",
 		"discord.js": "14.15.3",
 		"express": "^4.21.1",
+		"ffmpeg-static": "^5.2.0",
 		"fs": "^0.0.1-security",
+		"lavaclient": "^5.0.0-rc.3",
+		"lavacord": "^2.1.4-v4",
 		"mysql": "^2.18.1",
 		"os": "^0.1.2",
-		"path": "^0.12.7"
+		"path": "^0.12.7",
+		"play-dl": "^1.9.7",
+		"undici": "^6.20.1",
+		"youtubei.js": "^10.5.0",
+		"yt-search": "^2.12.1",
+		"ytdl-core": "^4.11.5"
 	},
 	"devDependencies": {
 		"prettier": "3.3.3",

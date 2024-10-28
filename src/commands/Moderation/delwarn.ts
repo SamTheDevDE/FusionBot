@@ -40,7 +40,7 @@ export default new Command({
             // Confirmation embed
             const deleteEmbed = new EmbedBuilder()
                 .setTitle('Warning Deleted')
-                .setColor('#ff4d4d')
+                .setColor('#1f2226')
                 .addFields(
                     { name: 'Warn ID', value: `${warnId}`, inline: true },
                     { name: 'Deleted By', value: `${interaction.user.tag}`, inline: true }
